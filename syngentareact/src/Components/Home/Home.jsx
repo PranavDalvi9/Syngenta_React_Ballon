@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Home.css";
 
 export default function Home() {
@@ -23,14 +23,36 @@ export default function Home() {
             color: "voilet",
             index: 4
         },
-
     ]
+
+    const [numberShoot , setNumberShoot] = useState(0);
+
+    const[emptyBag , setEmptyBag] = useState([])
+
+    const handleShoot = () => {
+        console.log("shoot Number" , numberShoot)
+        console.log("number choosen" ,ballon[numberShoot-1] )
+        setEmptyBag([...emptyBag, ballon[numberShoot-1]])
+    }
+    console.log("emptybaggg" ,emptyBag.length, emptyBag)
 
 
     return (
         <div className='HomeMain'>
             <div className='ColorMainDiv'>
-                <div>Empty</div>
+                <div>
+                    {
+                        emptyBag.length >0 ? 
+                        <>
+                        {
+                        emptyBag.map((e) => (
+                            <div className='IndividualCircle' style={{ background: `${e.color}` }}>{e.index}</div>
+                        ))
+                    }
+                        </> : 
+                        <>no</>
+                    }
+                </div>
                 <div className='ColorCircleMain'>
 
                     {
@@ -44,8 +66,8 @@ export default function Home() {
             </div>
 
             <div className='InputMainDiv'>
-                <input type="text" placeholder='Add Number to shoot' /> <br /><br />
-                <button>Shoot</button>
+                <input type="text" placeholder='Add Number to shoot' value={numberShoot} onChange={(e) => setNumberShoot(e.target.value)}/> <br /><br />
+                <button onClick={() => handleShoot()}>Shoot</button>
             </div>
         </div>
     )
