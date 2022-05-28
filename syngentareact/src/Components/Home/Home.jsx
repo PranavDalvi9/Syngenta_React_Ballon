@@ -30,7 +30,7 @@ export default function Home() {
     const [numberShoot, setNumberShoot] = useState("");
 
     const [emptyBag, setEmptyBag] = useState([]);
-
+    
     useEffect(() => {
         setBallonData(ballon11);
     }, []);
@@ -70,7 +70,7 @@ export default function Home() {
             </div>
 
             <div className='ColorMainDiv'>
-                <div>
+                <div className='EmptyCircleDiv'>
                     {
                         emptyBag.length > 0 ?
                             <>
