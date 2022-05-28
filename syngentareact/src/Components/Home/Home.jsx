@@ -32,7 +32,7 @@ export default function Home() {
     const [emptyBag, setEmptyBag] = useState([]);
 
     useEffect(() => {
-        setBallonData(ballon11)
+        setBallonData(ballon11);
     }, []);
 
     ballonData.sort((a, b) => a.index - b.index);
@@ -42,14 +42,15 @@ export default function Home() {
         const findIndiv = ballonData.find((e) => e.index === +numberShoot);
 
         if (findIndiv) {
-            setEmptyBag([...emptyBag, findIndiv])
+            setEmptyBag([...emptyBag, findIndiv]);
 
-            const afteradd = ballonData.filter((e) => findIndiv.index !== e.index)
-            setBallonData(afteradd)
-            setNumberShoot("")
+            const afteradd = ballonData.filter((e) => findIndiv.index !== e.index);
+            setBallonData(afteradd);
+            setNumberShoot("");
         }
         else {
-            alert("Enter Valid Number")
+            alert("Enter Valid Number");
+            setNumberShoot("");
         }
 
     }
@@ -64,7 +65,7 @@ export default function Home() {
     return (
         <div className='HomeMain'>
             <div className='NavBar'>
-                <h1>syngenta</h1>
+                <h1>Syngenta : Ballon Shoot</h1>
             </div>
 
             <div className='ColorMainDiv'>
@@ -84,19 +85,26 @@ export default function Home() {
                     }
                 </div>
                 <div className='ColorCircleMain'>
-
                     {
-                        ballonData.map((e) => (
-                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}><p>{e.index}</p></div>
-                        ))
+                        ballonData.length > 0 ? <>
+                            {
+                                ballonData.map((e) => (
+                                    <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}><p>{e.index}</p></div>
+                                ))
+                            }
+                        </> : <>
+                            <div> <p>No Data found</p></div>
+                        </>
                     }
+
+
 
 
                 </div>
             </div>
 
             <div className='InputMainDiv'>
-                <input type="text" placeholder='Add Number to shoot' value={numberShoot} onChange={(e) => setNumberShoot(e.target.value)} /> <br /><br />
+                <input type="text" placeholder='Add Number to shoot' value={numberShoot} onChange={(e) => setNumberShoot(e.target.value)} />
                 <button onClick={() => handleShoot()}>Shoot</button>
             </div>
         </div>

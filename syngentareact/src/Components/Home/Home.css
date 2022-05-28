@@ -19,6 +19,7 @@
 
 .ColorMainDiv > div {
   border: 2px solid #6d8b74;
+  border-radius: 20px;
   width: 100%;
   height: auto;
   margin: auto;
@@ -27,12 +28,14 @@
   margin-left: 45%;
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
+  cursor: pointer;
 }
+
 .IndividualCircle > p {
-  padding-top: 25%;
+  padding-top: 30%;
 }
 
 .InputMainDiv {
@@ -40,11 +43,17 @@
 }
 
 .InputMainDiv > button {
+  margin-left: 1%;
   background-color: #5f7161;
   color: #d0c9c0;
   border: transparent;
   padding: 1%;
   border-radius: 15px;
+  cursor: pointer;
+}
+.InputMainDiv > button:hover {
+  background-color: #570a57;
+  color: #efead8;
 }
 
 .InputMainDiv > input {
