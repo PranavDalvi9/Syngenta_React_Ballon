@@ -50,13 +50,15 @@ export default function Home() {
     // console.log("emptybaggg", emptyBag.length, emptyBag)
 
     const handleCircleclicked = (e) => {
-        console.log("circle clicked",e.index)
+        // console.log("circle clicked",e.index)
+        
         setBallonData([...ballonData,e])
-        console.log("baggg" , emptyBag)
+        // console.log("baggg" , emptyBag)
         const fillll =  emptyBag.filter((x) => e.index !== x.index)
         setEmptyBag(fillll)
         // console.log("filll" , fillll)
     }
+    ballonData.sort((a,b) => a.index - b.index)
 
     return (
         <div className='HomeMain'>
