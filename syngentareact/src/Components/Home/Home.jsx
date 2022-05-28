@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Home.css";
 
 export default function Home() {
-    const ballon = [
+    const ballon11 = [
         {
             color: "blue",
             index: 0
@@ -25,14 +25,25 @@ export default function Home() {
         },
     ]
 
+    const [ballonData , setBallonData] = useState([])
+
+
     const [numberShoot , setNumberShoot] = useState(0);
 
     const[emptyBag , setEmptyBag] = useState([])
 
+    useEffect(() => {
+        setBallonData(ballon11)
+    },[])
+
     const handleShoot = () => {
         console.log("shoot Number" , numberShoot)
-        console.log("number choosen" ,ballon[numberShoot-1] )
-        setEmptyBag([...emptyBag, ballon[numberShoot-1]])
+        console.log("number choosen" ,ballonData[numberShoot-1] )
+        setEmptyBag([...emptyBag, ballonData[numberShoot-1]])
+
+        const afteradd = ballonData.filter((e) => ballonData[numberShoot-1].index !== e.index )
+        setBallonData(afteradd)
+        console.log("after filter" , afteradd)
     }
     console.log("emptybaggg" ,emptyBag.length, emptyBag)
 
@@ -46,7 +57,7 @@ export default function Home() {
                         <>
                         {
                         emptyBag.map((e) => (
-                            <div className='IndividualCircle' style={{ background: `${e.color}` }}>{e.index}</div>
+                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}>{e.index}</div>
                         ))
                     }
                         </> : 
@@ -56,8 +67,8 @@ export default function Home() {
                 <div className='ColorCircleMain'>
 
                     {
-                        ballon.map((e) => (
-                            <div className='IndividualCircle' style={{ background: `${e.color}` }}>{e.index}</div>
+                        ballonData.map((e) => (
+                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}>{e.index}</div>
                         ))
                     }
 
