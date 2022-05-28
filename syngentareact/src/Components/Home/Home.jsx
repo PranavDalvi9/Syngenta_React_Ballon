@@ -5,23 +5,23 @@ export default function Home() {
     const ballon11 = [
         {
             color: "blue",
-            index: 0
-        },
-        {
-            color: "brown",
             index: 1
         },
         {
-            color: "green",
+            color: "brown",
             index: 2
         },
         {
-            color: "pink",
+            color: "green",
             index: 3
         },
         {
-            color: "voilet",
+            color: "pink",
             index: 4
+        },
+        {
+            color: "voilet",
+            index: 5
         },
     ]
 
@@ -38,12 +38,14 @@ export default function Home() {
 
     const handleShoot = () => {
         console.log("shoot Number" , numberShoot)
-        console.log("number choosen" ,ballonData[numberShoot-1] )
-        setEmptyBag([...emptyBag, ballonData[numberShoot-1]])
+        // console.log("number choosen" ,ballonData[numberShoot] )
+        const findIndiv = ballonData.find((e) => e.index === +numberShoot)
+        // console.log("datat find after shoot" , findIndiv)
+        setEmptyBag([...emptyBag, findIndiv ])
 
-        const afteradd = ballonData.filter((e) => ballonData[numberShoot-1].index !== e.index )
+        const afteradd = ballonData.filter((e) => findIndiv.index !== e.index )
         setBallonData(afteradd)
-        console.log("after filter" , afteradd)
+        // console.log("after filter" , afteradd)
     }
     console.log("emptybaggg" ,emptyBag.length, emptyBag)
 
@@ -68,7 +70,7 @@ export default function Home() {
 
                     {
                         ballonData.map((e) => (
-                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}>{e.index}</div>
+                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}>{e.index }</div>
                         ))
                     }
 
