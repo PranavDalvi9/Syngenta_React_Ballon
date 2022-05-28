@@ -39,12 +39,13 @@ export default function Home() {
 
 
     const handleShoot = () => {
-        const findIndiv = ballonData.find((e) => e.index === +numberShoot);
+        // console.log("shoot id" , numberShoot)
+        // console.log("shoot" ,ballonData[numberShoot-1] )
 
-        if (findIndiv) {
-            setEmptyBag([...emptyBag, findIndiv]);
+        if (ballonData[numberShoot - 1]) {
+            setEmptyBag([...emptyBag, ballonData[numberShoot - 1]]);
 
-            const afteradd = ballonData.filter((e) => findIndiv.index !== e.index);
+            const afteradd = ballonData.filter((e) => ballonData[numberShoot - 1].index !== e.index);
             setBallonData(afteradd);
             setNumberShoot("");
         }
