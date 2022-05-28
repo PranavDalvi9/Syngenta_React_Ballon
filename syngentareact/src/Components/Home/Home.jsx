@@ -20,7 +20,7 @@ export default function Home() {
             index: 4
         },
         {
-            color: "voilet",
+            color: "cyan",
             index: 5
         },
     ]
@@ -28,7 +28,7 @@ export default function Home() {
     const [ballonData, setBallonData] = useState([])
 
 
-    const [numberShoot, setNumberShoot] = useState(0);
+    const [numberShoot, setNumberShoot] = useState("");
 
     const [emptyBag, setEmptyBag] = useState([])
 
@@ -37,7 +37,7 @@ export default function Home() {
     }, [])
 
     const handleShoot = () => {
-        console.log("shoot Number", numberShoot)
+        // console.log("shoot Number", numberShoot)
         // console.log("number choosen" ,ballonData[numberShoot] )
         const findIndiv = ballonData.find((e) => e.index === +numberShoot)
         // console.log("datat find after shoot" , findIndiv)
@@ -45,20 +45,21 @@ export default function Home() {
 
         const afteradd = ballonData.filter((e) => findIndiv.index !== e.index)
         setBallonData(afteradd)
+        setNumberShoot("")
         // console.log("after filter" , afteradd)
     }
     // console.log("emptybaggg", emptyBag.length, emptyBag)
 
     const handleCircleclicked = (e) => {
         // console.log("circle clicked",e.index)
-        
-        setBallonData([...ballonData,e])
+
+        setBallonData([...ballonData, e])
         // console.log("baggg" , emptyBag)
-        const fillll =  emptyBag.filter((x) => e.index !== x.index)
+        const fillll = emptyBag.filter((x) => e.index !== x.index)
         setEmptyBag(fillll)
         // console.log("filll" , fillll)
     }
-    ballonData.sort((a,b) => a.index - b.index)
+    ballonData.sort((a, b) => a.index - b.index)
 
     return (
         <div className='HomeMain'>
@@ -69,18 +70,20 @@ export default function Home() {
                             <>
                                 {
                                     emptyBag.map((e) => (
-                                        <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index} onClick={() =>handleCircleclicked(e)} >{e.index}</div>
+                                        <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index} onClick={() => handleCircleclicked(e)} ><p>{e.index}</p></div>
                                     ))
                                 }
                             </> :
-                            <>no</>
+                            <>
+                            <div> <p>No Data found</p></div>
+                            </>
                     }
                 </div>
                 <div className='ColorCircleMain'>
 
                     {
                         ballonData.map((e) => (
-                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}>{e.index}</div>
+                            <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}><p>{e.index}</p></div>
                         ))
                     }
 
