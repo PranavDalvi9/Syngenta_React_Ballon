@@ -1,57 +1,66 @@
-.HomeMain{
-    width: 90%;
-    margin: auto;
+.HomeMain {
+  width: 90%;
+  margin: auto;
 }
 
-.ColorMainDiv{
-    display: flex;
-    /* border: 2px solid red; */
-    /* width: 90%; */
-    margin: auto;
-    gap: 5%;
+.NavBar {
+  border: 2px solid transparent;
+  background-color: #6d8b74;
+  color: #efead8;
+  width: 120%;
+  margin-left: -10%;
 }
 
-.ColorMainDiv>div{
-    border: 2px solid #6D8B74;
-    width: 100%;
-    /* height: 100%; */
-    /* height: 200px; */
-    height: auto;
-    margin: auto;
-}
-.IndividualCircle{
-    margin-left: 45%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    /* border: 2px solid black; */
-    width: 50px ;
-    height:  50px ;
-    border-radius: 100%;
-    /* margin: auto; */
-}
-.IndividualCircle>p{
-    /* border: 2px solid red; */
-    /* margin: auto; */
-    padding-top: 25%;
+.ColorMainDiv {
+  margin-top: 2%;
+  display: flex;
+  /* border: 2px solid red; */
+  /* width: 90%; */
+  /* margin: auto; */
+  gap: 5%;
 }
 
-.InputMainDiv{
-    /* border: 2px solid brown; */
-    margin-top: 3%;
+.ColorMainDiv > div {
+  border: 2px solid #6d8b74;
+  width: 100%;
+  /* height: 100%; */
+  /* height: 200px; */
+  height: auto;
+  margin: auto;
+}
+.IndividualCircle {
+  margin-left: 45%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* border: 2px solid black; */
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  /* margin: auto; */
+}
+.IndividualCircle > p {
+  /* border: 2px solid red; */
+  /* margin: auto; */
+  padding-top: 25%;
 }
 
-.InputMainDiv>button{
-    background-color: #5F7161;
-    color: #D0C9C0;
-    border: transparent;
-    padding: 1%;
-    border-radius: 15px;
+.InputMainDiv {
+  /* border: 2px solid brown; */
+  margin-top: 3%;
 }
 
-.InputMainDiv>input{
-    padding: 1%;
-    background-color: #EFEAD8;
-    border: transparent;
-    color: #5F7161;
-    border-radius: 15px;
+.InputMainDiv > button {
+  background-color: #5f7161;
+  color: #d0c9c0;
+  border: transparent;
+  padding: 1%;
+  border-radius: 15px;
+}
+
+.InputMainDiv > input {
+  padding: 1%;
+  background-color: #efead8;
+  border: transparent;
+  color: #5f7161;
+  border-radius: 15px;
 }

@@ -40,12 +40,20 @@ export default function Home() {
         // console.log("shoot Number", numberShoot)
         // console.log("number choosen" ,ballonData[numberShoot] )
         const findIndiv = ballonData.find((e) => e.index === +numberShoot)
-        // console.log("datat find after shoot" , findIndiv)
-        setEmptyBag([...emptyBag, findIndiv])
+        if (findIndiv) {
+            // console.log("finfdd" , findIndiv)
+            setEmptyBag([...emptyBag, findIndiv])
 
-        const afteradd = ballonData.filter((e) => findIndiv.index !== e.index)
-        setBallonData(afteradd)
-        setNumberShoot("")
+            const afteradd = ballonData.filter((e) => findIndiv.index !== e.index)
+            setBallonData(afteradd)
+            setNumberShoot("")
+        }
+        else {
+            alert("Enter Valid Number")
+        }
+
+
+
         // console.log("after filter" , afteradd)
     }
     // console.log("emptybaggg", emptyBag.length, emptyBag)
@@ -63,6 +71,10 @@ export default function Home() {
 
     return (
         <div className='HomeMain'>
+            <div className='NavBar'>
+                <h1>syngenta</h1>
+            </div>
+
             <div className='ColorMainDiv'>
                 <div>
                     {
@@ -75,7 +87,7 @@ export default function Home() {
                                 }
                             </> :
                             <>
-                            <div> <p>No Data found</p></div>
+                                <div> <p>No Data found</p></div>
                             </>
                     }
                 </div>
