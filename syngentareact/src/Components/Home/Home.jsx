@@ -23,25 +23,25 @@ export default function Home() {
             color: "cyan",
             index: 5
         },
-    ]
+    ];
 
-    const [ballonData, setBallonData] = useState([])
-
+    const [ballonData, setBallonData] = useState([]);
 
     const [numberShoot, setNumberShoot] = useState("");
 
-    const [emptyBag, setEmptyBag] = useState([])
+    const [emptyBag, setEmptyBag] = useState([]);
 
     useEffect(() => {
         setBallonData(ballon11)
-    }, [])
+    }, []);
+
+    ballonData.sort((a, b) => a.index - b.index);
+
 
     const handleShoot = () => {
-        // console.log("shoot Number", numberShoot)
-        // console.log("number choosen" ,ballonData[numberShoot] )
-        const findIndiv = ballonData.find((e) => e.index === +numberShoot)
+        const findIndiv = ballonData.find((e) => e.index === +numberShoot);
+
         if (findIndiv) {
-            // console.log("finfdd" , findIndiv)
             setEmptyBag([...emptyBag, findIndiv])
 
             const afteradd = ballonData.filter((e) => findIndiv.index !== e.index)
@@ -52,22 +52,14 @@ export default function Home() {
             alert("Enter Valid Number")
         }
 
-
-
-        // console.log("after filter" , afteradd)
     }
-    // console.log("emptybaggg", emptyBag.length, emptyBag)
 
     const handleCircleclicked = (e) => {
-        // console.log("circle clicked",e.index)
+        setBallonData([...ballonData, e]);
+        const fillll = emptyBag.filter((x) => e.index !== x.index);
+        setEmptyBag(fillll);
+    };
 
-        setBallonData([...ballonData, e])
-        // console.log("baggg" , emptyBag)
-        const fillll = emptyBag.filter((x) => e.index !== x.index)
-        setEmptyBag(fillll)
-        // console.log("filll" , fillll)
-    }
-    ballonData.sort((a, b) => a.index - b.index)
 
     return (
         <div className='HomeMain'>
