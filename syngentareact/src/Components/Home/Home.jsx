@@ -3,45 +3,20 @@ import "./Home.css";
 import { BallonData } from './BallonData';
 
 export default function Home() {
-    // const ballon11 = [
-    //     {
-    //         color: "blue",
-    //         index: 1
-    //     },
-    //     {
-    //         color: "brown",
-    //         index: 2
-    //     },
-    //     {
-    //         color: "green",
-    //         index: 3
-    //     },
-    //     {
-    //         color: "pink",
-    //         index: 4
-    //     },
-    //     {
-    //         color: "cyan",
-    //         index: 5
-    //     },
-    // ];
 
     const [ballonData, setBallonData] = useState([]);
 
     const [numberShoot, setNumberShoot] = useState("");
 
     const [emptyBag, setEmptyBag] = useState([]);
-    
+
     useEffect(() => {
         setBallonData(BallonData);
     }, []);
 
     ballonData.sort((a, b) => a.index - b.index);
 
-
     const handleShoot = () => {
-        // console.log("shoot id" , numberShoot)
-        // console.log("shoot" ,ballonData[numberShoot-1] )
 
         if (ballonData[numberShoot - 1]) {
             setEmptyBag([...emptyBag, ballonData[numberShoot - 1]]);
@@ -77,7 +52,7 @@ export default function Home() {
                             <>
                                 {
                                     emptyBag.map((e) => (
-                                        <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index} onClick={() => handleCircleclicked(e)} ><p>{e.index}</p></div>
+                                        <div className='IndividualCircle' style={{ background: `${e.color}`, border: 2px solid red }} key={e.index} onClick={() => handleCircleclicked(e)} ></div>
                                     ))
                                 }
                             </> :
@@ -91,7 +66,7 @@ export default function Home() {
                         ballonData.length > 0 ? <>
                             {
                                 ballonData.map((e) => (
-                                    <div className='IndividualCircle' style={{ background: `${e.color}` }} key={e.index}><p>{e.index}</p></div>
+                                    <div className='IndividualCircle' style={{ background: `#${e.color}` }} key={e.index}></div>
                                 ))
                             }
                         </> : <>
