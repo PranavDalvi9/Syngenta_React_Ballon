@@ -36,6 +36,7 @@
   margin: auto;
 }
 .IndividualCircle {
+  border: 1px solid black;
   margin-left: 45%;
   margin-top: 2%;
   margin-bottom: 2%;
