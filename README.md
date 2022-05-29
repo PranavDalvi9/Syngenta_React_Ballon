@@ -18,4 +18,8 @@
 
 <img width="942" alt="image" src="https://user-images.githubusercontent.com/96105012/170866009-008e7301-4df7-46e8-9b5b-3d9113bbfb93.png">
 
+### Number 2 entered and the second position ballon get moved to empty bag and the ballons gets re-arrange:-
+
+<img width="941" alt="image" src="https://user-images.githubusercontent.com/96105012/170866049-e6f0cf28-af70-453e-ac6d-d3accb74769f.png">
+
 
