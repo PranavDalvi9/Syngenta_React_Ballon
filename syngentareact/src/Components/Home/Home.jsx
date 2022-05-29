@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import "./Home.css";
+import { BallonData } from './BallonData';
 
 export default function Home() {
-    const ballon11 = [
-        {
-            color: "blue",
-            index: 1
-        },
-        {
-            color: "brown",
-            index: 2
-        },
-        {
-            color: "green",
-            index: 3
-        },
-        {
-            color: "pink",
-            index: 4
-        },
-        {
-            color: "cyan",
-            index: 5
-        },
-    ];
+    // const ballon11 = [
+    //     {
+    //         color: "blue",
+    //         index: 1
+    //     },
+    //     {
+    //         color: "brown",
+    //         index: 2
+    //     },
+    //     {
+    //         color: "green",
+    //         index: 3
+    //     },
+    //     {
+    //         color: "pink",
+    //         index: 4
+    //     },
+    //     {
+    //         color: "cyan",
+    //         index: 5
+    //     },
+    // ];
 
     const [ballonData, setBallonData] = useState([]);
 
@@ -32,7 +33,7 @@ export default function Home() {
     const [emptyBag, setEmptyBag] = useState([]);
     
     useEffect(() => {
-        setBallonData(ballon11);
+        setBallonData(BallonData);
     }, []);
 
     ballonData.sort((a, b) => a.index - b.index);
