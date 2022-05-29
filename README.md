@@ -1,4 +1,4 @@
-# Syngenta_React_Ballon\
+# Syngenta_React_Ballon
 
 ### A Ballon shoot application where a user has to enter the number and that sequence number ballon will get popped up into the empty bag on the left side of the window. And the user can also click on the ballon on the left-hand side of the window and that ballon will get popped up into its initial position.
 
@@ -11,6 +11,17 @@
 
 3.If the user clicks on the empty bag ballon, the ballon will get poped and goes to its initial place on the right.
 
+
+# Technologies that we used :-
+1. React
+2. Javascript
+3. CSS
+
+## Contact
+
+Pranav Dalvi - [My Linkedin](https://www.linkedin.com/in/pranavsanjaydalvi/)
+
+Project Link - [Project Repo](https://github.com/PranavDalvi9/Syngenta_React_Ballon)
 
 ## Glimpse of Our Work:-
 
