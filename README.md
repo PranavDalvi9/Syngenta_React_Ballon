@@ -27,3 +27,8 @@
 <img width="944" alt="image" src="https://user-images.githubusercontent.com/96105012/170866128-10bfbeaf-8e17-4b05-9cf7-57ef96624083.png">
 
 
+### If user clicks on ballon of the empty bag the ballon comes to its initial position on right:-
+
+<img width="944" alt="image" src="https://user-images.githubusercontent.com/96105012/170866226-974730c4-de1a-4e8f-99c1-78e002ab4a77.png">
+
+
