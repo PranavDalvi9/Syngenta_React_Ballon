@@ -47,5 +47,5 @@ Project Link - [Project Repo](https://github.com/PranavDalvi9/Syngenta_React_Bal
 
 
 ## Output of Project:- 
-[Video Presentation]()
+[Video Presentation](https://drive.google.com/file/d/1nmqUjSnMYVwCw772Vwqt960yKSzrh01B/view?usp=sharing)
 
