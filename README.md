@@ -4,9 +4,16 @@
 
 
 ## Features:-
+
 1.User has to enter the number for which color ballon to get shoot.
+
 2.The entered number ballon gets poped and goes to the empty bag.
+
 3.If the user clicks on the empty bag ballon, the ballon will get poped and goes to its initial place on the right.
+
+
+## Glimpse of Our Work:-
+
 
 
 
