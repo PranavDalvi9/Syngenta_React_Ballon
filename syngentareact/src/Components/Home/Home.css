@@ -17,15 +17,15 @@
   gap: 5%;
 }
 
-.EmptyCircleDiv{
-      border: 2px solid #6d8b74;
-    padding-top: 3%;
-    height: 110px !important;
-    display: flex;
-    width: 100%;
+.EmptyCircleDiv {
+  border: 2px solid #6d8b74;
+  padding-top: 3%;
+  height: 110px !important;
+  display: flex;
+  width: 100%;
 }
-.EmptyCircleDiv>div{
-    margin-left: 5% !important;
+.EmptyCircleDiv > div {
+  margin-left: 5% !important;
 }
 
 .ColorMainDiv > div {

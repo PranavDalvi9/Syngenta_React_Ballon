@@ -52,7 +52,7 @@ export default function Home() {
                             <>
                                 {
                                     emptyBag.map((e) => (
-                                        <div className='IndividualCircle' style={{ background: `#${e.color}`}} key={e.index} onClick={() => handleCircleclicked(e)} ></div>
+                                        <div className='IndividualCircle' style={{ background: `#${e.color}` }} key={e.index} onClick={() => handleCircleclicked(e)} ></div>
                                     ))
                                 }
                             </> :
@@ -73,9 +73,6 @@ export default function Home() {
                             <div> <p>No Data found</p></div>
                         </>
                     }
-
-
-
 
                 </div>
             </div>
